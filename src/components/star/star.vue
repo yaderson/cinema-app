@@ -13,9 +13,6 @@ export default {
     star: Number,
     size: Number
   },
-  mounted () {
-    console.log()
-  }
 }
 </script>
 

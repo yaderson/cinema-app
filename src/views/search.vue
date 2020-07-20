@@ -51,7 +51,6 @@ export default {
     async getResults(query) {
       const response = await search(query);
       this.results = response;
-      console.log(this.results)
     },
     clear () {
       this.query = ''

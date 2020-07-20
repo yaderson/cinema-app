@@ -2,7 +2,7 @@
   <div class="card">
     <a :href="'/details/'+id">
       <div class="body">
-        <img v-bind:src="'https://image.tmdb.org/t/p/w500/'+img" height="100%" alt="">
+        <img v-bind:src="'https://image.tmdb.org/t/p/w500/'+img" height="100" alt="">
       </div>
       <div class="bottom">
         <div class="content">
@@ -10,7 +10,7 @@
             <span>{{score}}</span>
           </div>
           <div>
-            <star v-bind:star="score"> </star>
+            <star v-bind:star="score" :size="5"> </star>
           </div>
         </div>
       </div>

@@ -1,14 +1,16 @@
 <template>
-  <swiper class="swiper" :options="swiperOption" style="margin-top: 20px">
-    <swiper-slide v-for="movie in movies" :key="movie.id">
-      <card :score="movie.vote_average" :img="movie.poster_path" :id="movie.id"></card>
-    </swiper-slide>
-  </swiper>
+  <div style="margin-top: 10px">
+    <carousel :per-page="1" :paginationEnabled="false">
+      <slide v-for="movie in movies" :key="movie.id" class="swiper-slide">
+        <card :score="movie.vote_average" :img="movie.poster_path" :id="movie.id"></card>
+      </slide>
+    </carousel>
+  </div>
 </template>
 
 <script>
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-  import 'swiper/swiper-bundle.css';
+  import { Carousel, Slide } from 'vue-carousel';
+
   import card from './card'
   const { getIncine } = require('@/services/index.js');
 
@@ -16,19 +18,14 @@
     name: 'swiper-example-navigation',
     title: 'Navigation',
     components: {
-      Swiper,
-      SwiperSlide,
-      card
+      card,
+      Carousel,
+      Slide
     },
     data() {
       return {
         movies: [],
-        swiperOption: {
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
-        }
+  
       }
     },
 
@@ -45,4 +42,6 @@
   justify-content: center;
   align-items: center;
 }
+
+
 </style>
